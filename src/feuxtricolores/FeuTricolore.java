@@ -5,6 +5,8 @@
  */
 package feuxtricolores;
 
+import java.awt.BorderLayout;
+
 /**
  *
  * @author VEK
@@ -16,6 +18,13 @@ public class FeuTricolore extends javax.swing.JFrame {
      */
     public FeuTricolore() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Feu Tricolore");
+        PanneauFeu p=new PanneauFeu();
+        panneauprinc.setLayout(new BorderLayout());
+        panneauprinc.add(p);
+       // panneauprinc.validate();
+        
     }
 
     /**
@@ -27,18 +36,22 @@ public class FeuTricolore extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panneauprinc = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        javax.swing.GroupLayout panneauprincLayout = new javax.swing.GroupLayout(panneauprinc);
+        panneauprinc.setLayout(panneauprincLayout);
+        panneauprincLayout.setHorizontalGroup(
+            panneauprincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 391, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panneauprincLayout.setVerticalGroup(
+            panneauprincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
         );
+
+        getContentPane().add(panneauprinc, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -79,5 +92,6 @@ public class FeuTricolore extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel panneauprinc;
     // End of variables declaration//GEN-END:variables
 }
