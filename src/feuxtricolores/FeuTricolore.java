@@ -12,7 +12,7 @@ import java.awt.BorderLayout;
  * @author VEK
  */
 public class FeuTricolore extends javax.swing.JFrame {
-
+    private Ordonnanceur ordo;
     /**
      * Creates new form FeuTricolore
      */
@@ -23,6 +23,8 @@ public class FeuTricolore extends javax.swing.JFrame {
         PanneauFeu p=new PanneauFeu();
         panneauprinc.setLayout(new BorderLayout());
         panneauprinc.add(p);
+        ordo= new Ordonnanceur(p);
+        ordo.start();
        // panneauprinc.validate();
         
     }

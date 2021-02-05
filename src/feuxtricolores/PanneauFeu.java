@@ -14,19 +14,46 @@ import javax.swing.BoxLayout;
  * @author VEK
  */
 public class PanneauFeu extends javax.swing.JPanel {
-
+    private String couleur="rouge";
     /**
      * Creates new form PanneauFeu
      */
     public PanneauFeu() {
         initComponents();
-        this.setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS));
-        PanneauFeuRouge pr=new PanneauFeuRouge();
-        PanneauFeuOrange po=new PanneauFeuOrange();
-        PanneauFeuVert pv=new PanneauFeuVert();
-        this.add(pr);
-        this.add(po);
-        this.add(pv);
+    }
+
+    public void setCouleur(String couleur) {
+        this.couleur = couleur;
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g); //To change body of generated methods, choose Tools | Templates.
+        if(couleur=="rouge"){
+            g.setColor(Color.red);
+            g.fillOval(this.getWidth()/2-40,10,80,80);
+            g.setColor(Color.black);
+            g.fillOval(this.getWidth()/2-40,100,80,80);
+            g.setColor(Color.black);
+            g.fillOval(this.getWidth()/2-40,190,80,80);
+        }
+        else if(couleur=="orange"){
+            g.setColor(Color.black);
+            g.fillOval(this.getWidth()/2-40,10,80,80);
+            g.setColor(Color.orange);
+            g.fillOval(this.getWidth()/2-40,100,80,80);
+            g.setColor(Color.black);
+            g.fillOval(this.getWidth()/2-40,190,80,80);
+        }
+        else{
+            g.setColor(Color.black);
+            g.fillOval(this.getWidth()/2-40,10,80,80);
+            g.setColor(Color.black);
+            g.fillOval(this.getWidth()/2-40,100,80,80);
+            g.setColor(Color.green);
+            g.fillOval(this.getWidth()/2-40,190,80,80);
+        }
+        
     }
 
     /**
@@ -38,7 +65,7 @@ public class PanneauFeu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 204, 204));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
